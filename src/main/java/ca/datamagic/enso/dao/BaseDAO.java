@@ -17,7 +17,7 @@ import org.apache.log4j.Logger;
  */
 public class BaseDAO {
 	private static Logger _logger = LogManager.getLogger(BaseDAO.class);
-	private static String _dataPath = "C:/Dev/Applications/ENSO/src/main/resources/META-INF/data";
+	private static String _dataPath = "C:/Dev/Applications/ENSO/src/main/resources/data";
 
 	static {
 		try {

@@ -40,6 +40,7 @@ public class CORSInterceptor extends HandlerInterceptorAdapter {
 	@Override
 	public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
 		_logger.debug("postHandle: " + request.getMethod());
-		
+		_logger.debug("requestUri: " + request.getRequestURI());
+		_logger.debug("responseContentType: " + response.getContentType());
 	}
 }

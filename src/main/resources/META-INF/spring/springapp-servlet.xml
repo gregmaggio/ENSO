@@ -21,13 +21,12 @@
 			</list>
 		</property>
 	</bean>
-    
-	<!-- Controllers -->
-	<bean name="ensoController" class="ca.datamagic.enso.controller.ENSOController" />
-    <bean id="documentationConfig" class="com.mangofactory.swagger.configuration.SpringSwaggerConfig"/>
-    
+     
+    <!-- Controllers -->
+	<bean name="indexController" class="ca.datamagic.enso.controller.IndexController" />
+	
     <context:annotation-config />
-
+    
 	<mvc:annotation-driven />
 
 	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
@@ -38,12 +37,11 @@
 	<mvc:resources mapping="/static/**" location="/"/>
 
 	<mvc:default-servlet-handler />
-		
+	
 	<mvc:interceptors>
 		<mvc:interceptor>
 			<mvc:mapping path="/**" />
 			<bean class="ca.datamagic.enso.interceptor.CORSInterceptor" />
 		</mvc:interceptor>
 	</mvc:interceptors>
-		
 </beans>  
