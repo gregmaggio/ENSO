@@ -58,7 +58,7 @@ public class Importer {
 	
 	public static void main(String[] args) {
 		try {
-			DOMConfigurator.configure("C:/Dev/Applications/ENSO/src/main/resources/META-INF/log4j.importer.cfg.xml");
+			DOMConfigurator.configure("C:/Dev/Applications/ENSO/src/main/resources/log4j.importer.cfg.xml");
 			String fileName = "C:/Data/ENSO/detrend.nino34.ascii.txt";
 			List<ONI> onis = parse(fileName, true);
 			ONIDAO dao = new ONIDAO();

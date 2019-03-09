@@ -5,40 +5,37 @@ package ca.datamagic.enso.dto;
 
 import java.util.Calendar;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 /**
  * @author Greg
  *
  */
 public class ONIDTO {
-	private Integer _year = null;
-	private Integer _month = null;
-	private Double _anom = null;
+	private Integer year = null;
+	private Integer month = null;
+	private Double anom = null;
 	
 	public ONIDTO() {
 		
 	}
 	
 	public ONIDTO(Integer year, Integer month, Double anom) {
-		_year = year;
-		_month = month;
-		_anom = anom;
+		this.year = year;
+		this.month = month;
+		this.anom = anom;
 	}
 
 	public Integer getYear() {
-		return _year;
+		return this.year;
 	}
 
 	public Integer getMonth() {
-		return _month;
+		return this.month;
 	}
 	
 	public Double getAnom() {
-		return _anom;
+		return this.anom;
 	}
 	
-	@JsonIgnore
 	public Calendar getCalendar() {
 		Calendar calendar = Calendar.getInstance();
 		calendar.set(Calendar.YEAR, getYear().intValue());
@@ -52,14 +49,14 @@ public class ONIDTO {
 	}
 	
 	public void setYear(Integer newVal) {
-		_year = newVal;
+		this.year = newVal;
 	}
 	
 	public void setMonth(Integer newVal) {
-		_month = newVal;
+		this.month = newVal;
 	}
 	
 	public void setAnom(Double newVal) {
-		_anom = newVal;
+		this.anom = newVal;
 	}
 }

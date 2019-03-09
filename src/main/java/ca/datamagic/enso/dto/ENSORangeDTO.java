@@ -1,70 +1,70 @@
 package ca.datamagic.enso.dto;
 
 public class ENSORangeDTO {
-	private Integer _startYear = null;
-	private Integer _startMonth = null;
-	private Integer _endYear = null;
-	private Integer _endMonth = null;
-	private Boolean _elNino = false;
-	private Boolean _laNina = false;
+	private Integer startYear = null;
+	private Integer startMonth = null;
+	private Integer endYear = null;
+	private Integer endMonth = null;
+	private Boolean elNino = false;
+	private Boolean laNina = false;
 	
 	public ENSORangeDTO() {
 	}
 	
 	public ENSORangeDTO(ENSOBucketDTO bucket) {
-		_startYear = bucket.getStartYear();
-		_startMonth = bucket.getStartMonth();
-		_endYear = bucket.getEndYear();
-		_endMonth = bucket.getEndMonth();
-		_elNino = bucket.isElNino();
-		_laNina = bucket.isLaNina();
+		this.startYear = bucket.getStartYear();
+		this.startMonth = bucket.getStartMonth();
+		this.endYear = bucket.getEndYear();
+		this.endMonth = bucket.getEndMonth();
+		this.elNino = bucket.isElNino();
+		this.laNina = bucket.isLaNina();
 	}
 	
 	public Integer getStartYear() {
-		return _startYear;
+		return this.startYear;
 	}
 
 	public Integer getStartMonth() {
-		return _startMonth;
+		return this.startMonth;
 	}
 	
 	public Integer getEndYear() {
-		return _endYear;
+		return this.endYear;
 	}
 
 	public Integer getEndMonth() {
-		return _endMonth;
+		return this.endMonth;
 	}
 	
 	public Boolean isElNino() {
-		return _elNino;
+		return this.elNino;
 	}
 	
 	public Boolean isLaNina() {
-		return _laNina;
+		return this.laNina;
 	}
 	
 	public void setStartYear(Integer newVal) {
-		_startYear = newVal;
+		this.startYear = newVal;
 	}
 	
 	public void setStartMonth(Integer newVal) {
-		_startMonth = newVal;
+		this.startMonth = newVal;
 	}
 	
 	public void setEndYear(Integer newVal) {
-		_endYear = newVal;
+		this.endYear = newVal;
 	}
 	
 	public void setEndMonth(Integer newVal) {
-		_endMonth = newVal;
+		this.endMonth = newVal;
 	}
 	
 	public void setElNino(Boolean newVal) {
-		_elNino = newVal;
+		this.elNino = newVal;
 	}
 	
 	public void setLaNina(Boolean newVal) {
-		_laNina = newVal;
+		this.laNina = newVal;
 	}
 }

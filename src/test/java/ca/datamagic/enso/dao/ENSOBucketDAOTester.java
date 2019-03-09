@@ -4,7 +4,6 @@
 package ca.datamagic.enso.dao;
 
 import java.io.File;
-import java.sql.SQLException;
 import java.util.List;
 
 import org.apache.log4j.LogManager;
@@ -16,8 +15,7 @@ import org.junit.Test;
 import ca.datamagic.enso.dto.ENSOBucketDTO;
 import ca.datamagic.enso.dto.ENSORangeDTO;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.gson.Gson;
 
 /**
  * @author Greg
@@ -28,35 +26,35 @@ public class ENSOBucketDAOTester {
 	
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
-		DOMConfigurator.configure("src/test/resources/META-INF/log4j.cfg.xml");
-		String dataPath = (new File("src/main/resources/META-INF/data")).getCanonicalPath();
+		DOMConfigurator.configure("src/test/resources/log4j.cfg.xml");
+		String dataPath = (new File("src/main/resources/data")).getCanonicalPath();
 		BaseDAO.setDataPath(dataPath);
 	}
 
 	@Test
-	public void allENSOBucketTest() throws JsonProcessingException, SQLException {
+	public void allENSOBucketTest() throws Exception {
 		ENSOBucketDAO dao = new ENSOBucketDAO();
 		List<ENSOBucketDTO> all = dao.getAll();
-		ObjectMapper mapper = new ObjectMapper();
-		String json = mapper.writeValueAsString(all);
+		Gson gson = new Gson();
+		String json = gson.toJson(all);
 		_logger.debug(json);
 	}
 
 	@Test
-	public void ENSOBucket2016Test() throws JsonProcessingException, SQLException {
+	public void ENSOBucket2016Test() throws Exception {
 		ENSOBucketDAO dao = new ENSOBucketDAO();
 		List<ENSOBucketDTO> all = dao.getAll(2016);
-		ObjectMapper mapper = new ObjectMapper();
-		String json = mapper.writeValueAsString(all);
+		Gson gson = new Gson();
+		String json = gson.toJson(all);
 		_logger.debug(json);
 	}
 	
 	@Test
-	public void ENSORangeTest() throws JsonProcessingException, SQLException {
+	public void ENSORangeTest() throws Exception {
 		ENSOBucketDAO dao = new ENSOBucketDAO();
 		List<ENSORangeDTO> ranges = dao.getRanges();
-		ObjectMapper mapper = new ObjectMapper();
-		String json = mapper.writeValueAsString(ranges);
+		Gson gson = new Gson();
+		String json = gson.toJson(ranges);
 		_logger.debug(json);
 	}
 }

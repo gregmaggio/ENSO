@@ -7,21 +7,19 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 /**
  * @author Greg
  *
  */
 public class ENSOBucketDTO {
-	private String _text = null;
-	private Integer _startYear = null;
-	private Integer _startMonth = null;
-	private Integer _endYear = null;
-	private Integer _endMonth = null;
-	private Double _anom = null;
-	private Boolean _elNino = false;
-	private Boolean _laNina = false;
+	private String text = null;
+	private Integer startYear = null;
+	private Integer startMonth = null;
+	private Integer endYear = null;
+	private Integer endMonth = null;
+	private Double anom = null;
+	private Boolean elNino = false;
+	private Boolean laNina = false;
 	
 	public ENSOBucketDTO() {
 	}
@@ -138,82 +136,81 @@ public class ENSOBucketDTO {
 	}
 	
 	public String getText() {
-		return _text;
+		return this.text;
 	}
 	
 	public Integer getStartYear() {
-		return _startYear;
+		return this.startYear;
 	}
 
 	public Integer getStartMonth() {
-		return _startMonth;
+		return this.startMonth;
 	}
 	
 	public Integer getEndYear() {
-		return _endYear;
+		return this.endYear;
 	}
 
 	public Integer getEndMonth() {
-		return _endMonth;
+		return this.endMonth;
 	}
 	
 	public Double getAnom() {
-		return _anom;
+		return this.anom;
 	}
 	
 	public Boolean isElNino() {
-		return _elNino;
+		return this.elNino;
 	}
 	
 	public Boolean isLaNina() {
-		return _laNina;
+		return this.laNina;
 	}
 	
 	public void setText(String newVal) {
-		_text = newVal;
+		this.text = newVal;
 	}
 	
 	public void setStartYear(Integer newVal) {
-		_startYear = newVal;
+		this.startYear = newVal;
 	}
 	
 	public void setStartMonth(Integer newVal) {
-		_startMonth = newVal;
+		this.startMonth = newVal;
 	}
 	
 	public void setEndYear(Integer newVal) {
-		_endYear = newVal;
+		this.endYear = newVal;
 	}
 	
 	public void setEndMonth(Integer newVal) {
-		_endMonth = newVal;
+		this.endMonth = newVal;
 	}
 	
 	public void setAnom(Double newVal) {
-		_anom = newVal;
-		if (_anom != null) {
-			if (_anom.doubleValue() > +0.5) {
-				_elNino = Boolean.TRUE;
-				_laNina = Boolean.FALSE;
-			} else if (_anom.doubleValue() < -0.5) {
-				_elNino = Boolean.FALSE;
-				_laNina = Boolean.TRUE;
+		this.anom = newVal;
+		if (this.anom != null) {
+			if (this.anom.doubleValue() > +0.5) {
+				this.elNino = Boolean.TRUE;
+				this.laNina = Boolean.FALSE;
+			} else if (this.anom.doubleValue() < -0.5) {
+				this.elNino = Boolean.FALSE;
+				this.laNina = Boolean.TRUE;
 			}
 		} else {
-			_elNino = Boolean.FALSE;
-			_laNina = Boolean.FALSE;
+			this.elNino = Boolean.FALSE;
+			this.laNina = Boolean.FALSE;
 		}
 	}
 	
 	public void setElNino(Boolean newVal) {
-		_elNino = newVal;
+		this.elNino = newVal;
 	}
 	
 	public void setLaNina(Boolean newVal) {
-		_laNina = newVal;
+		this.laNina = newVal;
 	}
 	
-	@JsonIgnore
 	public Calendar getStart() {
 		if ((getStartYear() != null) && (getStartMonth() != null)) {
 			Calendar start = Calendar.getInstance();
@@ -229,7 +226,6 @@ public class ENSOBucketDTO {
 		return null;
 	}
 	
-	@JsonIgnore
 	public Calendar getEnd() {
 		if ((getEndYear() != null) && (getEndMonth() != null)) {
 			Calendar end = Calendar.getInstance();
