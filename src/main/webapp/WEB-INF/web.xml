@@ -5,7 +5,7 @@
          http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" 
          metadata-complete="true">
 
-	<display-name>Station</display-name>
+	<display-name>ENSO</display-name>
 	
 	<listener>
 		<listener-class>ca.datamagic.enso.servlet.ENSOContextListener</listener-class>
